@@ -1,0 +1,11 @@
+{
+  "key": "outboundCustomer",
+  "category": "channel",
+  "name": "Test channel",
+  "description": "Test Outbound Channel",
+  "channelType": "outbound",
+  "type": "rabbit",
+  "serializerType": "json",
+  "routingKey": "flowable.test.customer-event",
+  "exchange": "amq.topic"
+}

@@ -1,0 +1,13 @@
+{
+  "key": "testChannel",
+  "category": "channel",
+  "name": "Test channel",
+  "description": "test Inbound Channel",
+  "channelType": "inbound",
+  "type": "rabbit",
+  "deserializerType": "json",
+  "channelEventKeyDetection": {
+    "jsonField": "eventKeyValue"
+  },
+  "queues": ["flowable-inbound"]
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (c) 2020 nexiles GmbH.  All rights reserved.
+  -->
+
+<definitions
+        xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
+        xmlns:flowable="http://flowable.org/bpmn"
+        targetNamespace="Examples">
+
+    <process id="eventTest" name="Process to test events">
+        <startEvent id="theStart" >
+            <extensionElements>
+                <flowable:eventType xmlns:flowable="http://flowable.org/bpmn">myEvent</flowable:eventType>
+                <flowable:eventOutParameter xmlns:flowable="http://flowable.org/bpmn"
+                                            source="customerName"
+                                            sourceType="string"
+                                            target="customerName"/>
+                <flowable:eventOutParameter xmlns:flowable="http://flowable.org/bpmn"
+                                            source="amount"
+                                            sourceType="integer"
+                                            target="amount"/>
+            </extensionElements>
+        </startEvent>
+        <sequenceFlow id="flow1" sourceRef="theStart" targetRef="theTask" />
+        <serviceTask id="theTask" name="my task" flowable:expression="#{Logger.log(execution, customerName)}" />
+        <sequenceFlow id="flow2" sourceRef="theTask" targetRef="theEnd" />
+        <endEvent id="theEnd" />
+    </process>
+
+</definitions>

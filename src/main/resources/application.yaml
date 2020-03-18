@@ -1,0 +1,28 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: flowable-event-registry-demo
+    version: "@project.version@"
+
+  #datasource:
+    #url: jdbc:postgresql://127.0.0.1:5432/flowable
+    #username: flowable
+    #password: flowable
+
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+
+flowable:
+  eventregistry:
+    enabled: true
+    resource-location: "classpath*:/eventregistry/"
+#    enable-change-detection: true
+logging:
+  level:
+    com.nexiles: DEBUG
+#    org.flowable: DEBUG
+#    org.flowable.eventregistry: DEBUG
