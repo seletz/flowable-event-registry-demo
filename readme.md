@@ -72,6 +72,8 @@ Defines a channel where flowable listens for events.
 - We want flowable to bind to the queue "flowable-inbound".  This is a queue which must exist in RabbitMQ and
   our messages must be routed to this queue.
 
+Inbound channel:
+
     {
           "key": "testChannel",
           "category": "channel",
