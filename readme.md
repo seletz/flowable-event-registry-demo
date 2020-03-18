@@ -58,7 +58,7 @@ What does the code do
 
 - Define a **inbound channel**  -- `inbound.channel` in resources/eventregistry
 - Define the **event** -- `event-one.event` in resources/eventregistry
-- Define a **process** -- `event-test-process.bpmn2ß.xml` in resources/processes
+- Define a **process** -- `event-test-process.bpmn20.xml` in resources/processes
 
 ### inbound channel
 
@@ -73,18 +73,18 @@ Defines a channel where flowable listens for events.
   our messages must be routed to this queue.
 
     {
-      "key": "testChannel",
-      "category": "channel",
-      "name": "Test channel",
-      "description": "test Inbound Channel",
-      "channelType": "inbound",
-      "type": "rabbit",
-      "deserializerType": "json",
-      "channelEventKeyDetection": {
-        "jsonField": "eventKeyValue"
-      },
-      "queues": ["flowable-inbound"]
-}
+          "key": "testChannel",
+          "category": "channel",
+          "name": "Test channel",
+          "description": "test Inbound Channel",
+          "channelType": "inbound",
+          "type": "rabbit",
+          "deserializerType": "json",
+          "channelEventKeyDetection": {
+            "jsonField": "eventKeyValue"
+          },
+          "queues": ["flowable-inbound"]
+    }
 
 ### Event Definition
 
